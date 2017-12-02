@@ -1,4 +1,5 @@
 from numpy import e
+import numpy as np
 
 def sigmoid(z):
     """computes the sigmoid of z."""
@@ -8,4 +9,8 @@ def sigmoid(z):
 #               vector or scalar).
 
 # =============================================================
+
+# option1: sigmoid = 1 / (1 + exp(-z))
+# option2: sigmoid = expit(z)
+    g = 1.0 / (1.0 + np.exp(-z))
     return g

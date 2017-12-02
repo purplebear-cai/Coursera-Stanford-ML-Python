@@ -1,7 +1,6 @@
 from numpy import round
-
 from sigmoid import sigmoid
-
+import numpy as np
 
 def predict(theta, X):
 
@@ -17,5 +16,8 @@ def predict(theta, X):
 
 
 # =========================================================================
-
+# theta.shape = (n+1, 1)                                                        
+# X.shape = (m, n+1)                                                            
+    sigmoid_score = sigmoid(np.dot(X, theta))
+    p = sigmoid_score >= 0.5
     return p

@@ -1,6 +1,6 @@
 from sigmoid import sigmoid
 from numpy import squeeze, asarray
-
+import numpy as np
 
 def gradientFunction(theta, X, y):
     """
@@ -19,5 +19,9 @@ def gradientFunction(theta, X, y):
 
 
 # =============================================================
-
+# theta.shape = (n+1, 1)                                                        
+# X.shape = (m, n+1)                                                            
+# y.shape = (m, 1)
+# grad = 1/m * ((h - y) * x).sum()
+    grad = 1.0 / m * (np.dot(sigmoid(np.dot(X, theta)).T - y, X)).sum()
     return grad

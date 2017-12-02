@@ -42,7 +42,7 @@ from ml import plotData, plotDecisionBoundary
 #  The first two columns contains the exam scores and the third column
 #  contains the label.
 
-data = np.loadtxt('ex2data1.txt', delimiter=',')
+data = np.loadtxt('ex2/ex2data1.txt', delimiter=',')
 X = data[:, 0:2]
 y = data[:, 2]
 
