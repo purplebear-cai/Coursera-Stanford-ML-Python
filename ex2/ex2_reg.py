@@ -42,7 +42,7 @@ def plotBoundary(theta, X, y):
 #  The first two columns contains the X values and the third column
 #  contains the label (y).
 
-data = pd.read_csv('ex2data2.txt', header=None, names=[1,2,3])
+data = pd.read_csv('ex2/ex2data2.txt', header=None, names=[1,2,3])
 X = data[[1, 2]]
 y = data[[3]]
 

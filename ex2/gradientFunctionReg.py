@@ -1,7 +1,7 @@
 from numpy import asfortranarray, squeeze, asarray
-
 from gradientFunction import gradientFunction
-
+import numpy as np
+from sigmoid import sigmoid
 
 def gradientFunctionReg(theta, X, y, Lambda):
     """
@@ -19,5 +19,13 @@ def gradientFunctionReg(theta, X, y, Lambda):
 
 
 # =============================================================
+    # theta.shape = (n+1, )
+    # X.shape = (m, n+1)
+    # y.shape = (m, 1)
+    y = np.squeeze(y)
+    grad = (1.0 / m) * np.dot(sigmoid(np.dot(X, theta)).T - y, X).T + (float(Lambda) / m) * theta
 
+    # we only apply gradient to 1, 2, ..., n+1
+    grad_without_reg = (1.0/m) * np.dot(sigmoid(np.dot(X, theta)).T - y, X).T
+    grad[0] = grad_without_reg[0]
     return grad
