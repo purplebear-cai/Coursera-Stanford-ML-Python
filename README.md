@@ -116,7 +116,7 @@ other than English, use the `-language` option, as in `-language Swedish`.
 ## Training Arguments
 ### To train a tagger, some arguments are required.
 > -model: the path to the resulting model directory
--modelType: classifier training algorithm (DNN_CLASSIFIER/DNN_TAGGER)
+> -modelType: classifier training algorithm (DNN_CLASSIFIER/DNN_TAGGER)
 -readerType: to define CorpusReader
 -train: the path to training data
 -dev: the path to validation data
